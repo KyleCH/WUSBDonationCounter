@@ -1,1 +1,24 @@
-<div style="text-align:center;"><a href="http://www.fund-raising-ideas-center.com/" alt="Fundraising Thermometer"><img border="0" src="http://thermometer.fund-raising-ideas-center.com/thermometer.php?currency=dollar&goal=75000&current=25&color=red&size=large"></a><p style="font-size:.8em; color:#999">Provided by<a href="http://www.fund-raising-ideas-center.com/" rel="nofollow" style="display:block; text-decoration:none; font-size:.8em; color:#999">Fund-Raising-Ideas-Center.com</a></p></div>
+<div style="text-align:center;">
+	<a href="http://www.fund-raising-ideas-center.com/" alt="Fundraising Thermometer">
+		<img border="0" src="http://thermometer.fund-raising-ideas-center.com/thermometer.php?currency=dollar&goal=75000&current=25&color=red&size=large">
+	</a>
+
+	<p style="font-size:.8em; color:#999">Provided by<a href="http://www.fund-raising-ideas-center.com/" rel="nofollow" style="display:block; text-decoration:none; font-size:.8em; color:#999">Fund-Raising-Ideas-Center.com</a></p>
+	
+	<script>
+		$.ajax({
+            url: "https://docs.google.com/spreadsheets/d/1t3wfKU6rCaMZ0YDg8yFLzHC3yUXxc9AoYpfZDO5UA7g/pubhtml?gid=0&single=true&range=B1&output=html",
+            type: 'GET',
+            dataType: 'html',
+            success: function(data, textStatus, xhr) {
+            	console.log(typeof data);
+            	// var result = (function (data) {
+
+            	// }());
+
+            }
+        });
+
+		$(this).attr("src", "http://thermometer.fund-raising-ideas-center.com/thermometer.php?currency=dollar&goal=75000&current="+result+"&color=red&size=large");
+	</script>
+</div>
