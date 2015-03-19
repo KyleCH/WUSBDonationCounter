@@ -1,0 +1,16 @@
+#!/bin/bash
+# this is script.sh in ~/test on the server (as root)
+while :
+do
+	URL="https://docs.google.com/spreadsheets/d/1t3wfKU6rCaMZ0YDg8yFLzHC3yUXxc9AoYpfZDO5UA7g/pubhtml"
+	
+	wget -c --read-timeout=5 --tries=1 "$URL" -O output
+	a=`head -75 output | tail -1`
+	b=`echo ${a:1026:9} | tr -cd '[[:alnum:]]._'`
+	url1="http://thermometer.fund-raising-ideas-center.com/thermometer.php?currency=dollar&goal=75000&current="
+	url2="&color=red&size=large"
+	newurl=$url1$b$url2
+	wget "$newurl" -O graphic.png
+	sleep 600
+done
+
